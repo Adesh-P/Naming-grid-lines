@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Line Naming</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 80%;
+            height: 720px;
+            background-color: #eee;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: [column1-start] 1fr [column1-end column2-start] 1fr [column2-end column3-start] 1fr [column3-end];
+            grid-template-rows: [header-start] 120px [header-end menu-start] 100px [menu-end box-start] 200px [box-end content-start] 250px [content-end footer-start] 50px [footer-end];
+            grid-gap: 15px;
+        }
+        .inner1 {
+            background-color: pink;
+            grid-column: column1-start / column3-end;
+            grid-row: header-start / header-end;
+        }
+        .inner2 {
+            background-color: skyblue;
+            grid-column: column1-start / column3-end;
+            grid-row: menu-start / menu-end;
+        }
+        .inner3 {
+            background-color: goldenrod;
+            grid-column: column1-start / column1-end;
+            grid-row: box-start / box-end;
+        }
+        .inner4 {
+            background-color: greenyellow;
+        }
+        .inner5 {
+            background-color: peru;
+            grid-column: column3-start / column3-end;
+            grid-row: box-start / content-end;
+        }
+        .inner6 {
+            background-color: powderblue;
+            grid-column: column1-start / column2-end;
+            grid-row: content-start / content-end;
+        }
+        .inner7 {
+            background-color: slategray;
+            grid-column: column1-start / column3-end;
+            grid-row: footer-start / footer-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner inner1">Header</div>
+        <div class="inner inner2">Menu</div>
+        <div class="inner inner3">Box-1</div>
+        <div class="inner inner4">Box-2</div>
+        <div class="inner inner5">Side Bar</div>
+        <div class="inner inner6">Content</div>
+        <div class="inner inner7">Footer</div>
+    </div>
+</body>
+</html>
